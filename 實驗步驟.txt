@@ -1,0 +1,16 @@
+假設條件下
+
+modeling(governing Eq.)
+
+B.C，I.C
+
+解析解:正解
+數值解
+實驗解(技巧)
+
+Verification
+驗證
+
+Physics
+interpretation
+new understanding
