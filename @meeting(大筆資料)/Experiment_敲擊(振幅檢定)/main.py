@@ -11,9 +11,9 @@ from scipy.fft import fft
 
 ##1.先處理一開始得到的資料
 #輸入必要資訊
-File= xlrd.open_workbook('noiseData.xlsx')
+File= xlrd.open_workbook('knockData_horizontal.xlsx')
 Sheet= File.sheet_by_index(0)
-total_time= 303.9
+total_time= 135.8
 dt=0.002
 sample_rate=1/dt
 sample_num= int(sample_rate*total_time)
@@ -23,7 +23,7 @@ time=np.linspace(0, total_time, sample_num, endpoint=False)
 X_direction=[0,3,6]
 Y_direction=[1,4,7]
 Z_direction=[2,5,8]
-directionYouWantToAnaylze= X_direction
+directionYouWantToAnaylze= Y_direction
 
 Geo1Data= Sheet.col_values(directionYouWantToAnaylze[0],23,23+sample_num)
 Geo1Data= np.array(Geo1Data)
@@ -33,8 +33,9 @@ Geo3Data= Sheet.col_values(directionYouWantToAnaylze[2],23,23+sample_num)
 Geo3Data= np.array(Geo3Data)
 
 #輸入要分析的頻率區段
-freq_lowerlimit= 200
-freq_upperlimit= 249
+freq_lowerlimit= 10
+freq_upperlimit= 35
+
 
 #電壓時域圖
 plt.figure(1)
